@@ -1,4 +1,4 @@
-package DSA;
+package DSA.String;
 
 public class missing_list {
     public static void main(String[]args)

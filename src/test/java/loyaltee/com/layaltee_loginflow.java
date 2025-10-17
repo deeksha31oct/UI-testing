@@ -29,7 +29,7 @@ public class layaltee_loginflow {
 
         d.get("https://web.loyaltee.co/login/");
         d.manage().window().maximize();
-        d.findElement(By.name("email")).sendKeys("migan29386@hiepth.com");
+        d.findElement(By.name("email")).sendKeys("deeksha.oct31@gmail.com");
         d.findElement(By.name("password")).sendKeys("Testing12@");
         d.findElement(By.xpath("//button[@type='submit']")).click();
         //Thread.sleep(5000);

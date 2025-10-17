@@ -1,6 +1,8 @@
 package loyaltee.com;
 
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -28,7 +30,7 @@ public class Loyaltee_history {
 
         d.get("https://web.loyaltee.co/login/");
         d.manage().window().maximize();
-        d.findElement(By.name("email")).sendKeys("migan29386@hiepth.com");
+        d.findElement(By.name("email")).sendKeys("deeksha.oct31@gmail.com");
         d.findElement(By.name("password")).sendKeys("Testing12@");
         d.findElement(By.xpath("//button[@type='submit']")).click();
     }
@@ -42,6 +44,9 @@ public class Loyaltee_history {
         public void redeemed()
         {
  WebDriverWait re = new WebDriverWait(d , Duration.ofSeconds(6));
+            //JavascriptExecutor js = new JavascriptExecutor() ;
+
+
  WebElement redeemed = re.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//P[contains(text(),'Redeemed')]")));
          redeemed.click();
 

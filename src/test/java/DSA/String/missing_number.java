@@ -1,4 +1,4 @@
-package DSA;
+package DSA.String;
 
 public class missing_number {
     public static void main(String[]args)
