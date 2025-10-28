@@ -1,5 +1,8 @@
 package DSA.interview;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class second_largest_array
 {
     public static void main(String[]args)
@@ -20,5 +23,9 @@ public class second_largest_array
             }
         }
         System.out.println("second largest nummber in array : "+ second);
+        System.out.println(Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst().get());
+
+        System.out.println(Arrays.stream(arr).boxed().sorted().skip(arr.length - 2).findFirst().get());
     }
 }
+

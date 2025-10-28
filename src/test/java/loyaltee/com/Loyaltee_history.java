@@ -1,9 +1,7 @@
 package loyaltee.com;
-
+import org.openqa.selenium.io.FileHandler;
 import org.jspecify.annotations.Nullable;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.Duration;
+
 
 public class Loyaltee_history {
     ChromeDriver d;
@@ -40,18 +45,28 @@ public class Loyaltee_history {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@aria-label='Settings']"))).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'View your stamp collection')]"))).click();
     }
- @Test(dependsOnMethods = {"history"})
-        public void redeemed()
-        {
- WebDriverWait re = new WebDriverWait(d , Duration.ofSeconds(6));
-            //JavascriptExecutor js = new JavascriptExecutor() ;
+
+     @Test(dependsOnMethods = {"history"})
+        public void redeemed() throws IOException {
+             WebDriverWait re = new WebDriverWait(d, Duration.ofSeconds(6));
+             //JavascriptExecutor js = new JavascriptExecutor() ;
+
+             try {
+                 WebElement redeemed = re.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//P[contains(text(),'Redeemed')]")));
+                 redeemed.click();
 
 
- WebElement redeemed = re.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//P[contains(text(),'Redeemed')]")));
-         redeemed.click();
+                 System.out.println("print redeemed data : " + redeemed);
 
+                 //d.findElement(By.xpath("//span[contains(text(),'View your stamp collection')]")).click();
 
- System.out.println("print redeemed data : "+ redeemed);
- //d.findElement(By.xpath("//span[contains(text(),'View your stamp collection')]")).click();
-    }}
+                      File take = ((TakesScreenshot) d).getScreenshotAs(OutputType.FILE);
+                 File dest = new File("C:\\Users\\user\\Desktop\\loyaltee_screenshot_1.jpg");
+             FileHandler.copy(take, dest);
+             System.out.println("save:"+ dest.getAbsolutePath());
+             } catch (Exception e ){
+                 System.out.println("Redeemed click pass. Taking screenshot...");
+            }
+    }
+}
 

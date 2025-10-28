@@ -16,5 +16,6 @@ public class vowels_constant {
                 cv++;
         }
         System.out.println("vowels : "+ve + "\n comst : "+ cv);
+
     }
 }

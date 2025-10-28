@@ -1,16 +1,17 @@
 package loyaltee.com;
 
 import com.google.common.collect.Table;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class layaltee_loginflow {
         d = new ChromeDriver(co);
    }
     @Test
-    public void login() throws InterruptedException {
+    public void login() throws InterruptedException, IOException {
 
         d.get("https://web.loyaltee.co/login/");
         d.manage().window().maximize();
@@ -43,5 +44,8 @@ public class layaltee_loginflow {
      //click to add to wallet to download the pass
    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='font-semibold']"))).click();
 
+   File s = ((TakesScreenshot)d).getScreenshotAs(OutputType.FILE);
+        FileHandler.copy(s, new File("C:\\Users\\user\\Desktop\\sct_1.jpg"));
+        System.out.println("scr"+s.getAbsolutePath());
          }
 }
