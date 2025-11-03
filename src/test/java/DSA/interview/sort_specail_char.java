@@ -1,6 +1,6 @@
 package DSA.interview;
 
-public class prime_number {
+public class sort_specail_char {
     public static void main(String[]args)
     {
         String a = "Dee!@#$ksha!@#$%1233!@#$";

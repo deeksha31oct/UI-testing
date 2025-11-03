@@ -45,7 +45,7 @@ public class layaltee_loginflow {
    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='font-semibold']"))).click();
 
    File s = ((TakesScreenshot)d).getScreenshotAs(OutputType.FILE);
-        FileHandler.copy(s, new File("C:\\Users\\user\\Desktop\\sct_1.jpg"));
+        FileHandler.copy(s, new File("C:\\Users\\user\\Desktop\\sct232_1.jpg"));
         System.out.println("scr"+s.getAbsolutePath());
          }
 }

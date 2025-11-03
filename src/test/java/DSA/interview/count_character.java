@@ -9,12 +9,7 @@ public class count_character
         while(!a.isEmpty())
         {
             char c = a.charAt(0);
-//            if(c==' ')
-//            {
-//                a= a.replaceFirst(" ","");
-//                continue;
-//            }
-            int it = a.replaceAll(String.valueOf(c),"").length();
+       int it = a.replaceAll(String.valueOf(c),"").length();
            System.out.println("counting: "+String.valueOf(c)+" Size : "+(a.length()-it));
            a=a.replaceAll(String.valueOf(c),"");
         }
