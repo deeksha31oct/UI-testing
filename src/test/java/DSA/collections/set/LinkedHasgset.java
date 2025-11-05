@@ -1,4 +1,4 @@
 package DSA.collections.set;
 
-public class set {
+public class LinkedHasgset {
 }
