@@ -1,4 +1,4 @@
-package DSA.collections.set;
+package DSA.collections.set.Hasgset;
 
 import java.util.HashSet;
 

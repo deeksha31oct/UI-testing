@@ -1,10 +1,8 @@
 package DSA.collections.set.Treeset;
 
-import java.util.Collections;
-import java.util.Set;
 import java.util.TreeSet;
 
-public class sorting
+public class sorting_int
 {
     public static void main(String[]args)
     {
