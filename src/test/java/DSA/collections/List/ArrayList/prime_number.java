@@ -8,5 +8,6 @@ public class prime_number {
         int n = 100 ;
 
 
+
     }
 }
