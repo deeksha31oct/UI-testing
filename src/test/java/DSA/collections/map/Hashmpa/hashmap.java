@@ -1,7 +1,4 @@
-package DSA.collections.map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package DSA.collections.map.Hashmpa;
 
 import java.util.HashMap;
 

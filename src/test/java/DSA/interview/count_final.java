@@ -10,7 +10,7 @@ public class count_final {
         {
             char ch = a.charAt(0);
         int nn = a.replaceAll(String.valueOf(ch),"").length();
-            System.out.println("count:"+ String.valueOf(a)+" repead : "+ (a.length()-nn));
+            System.out.println("count:"+ String.valueOf(ch)+" repead : "+ (a.length()-nn));
             a= a.replaceAll(String.valueOf(a),"");
         }
 
