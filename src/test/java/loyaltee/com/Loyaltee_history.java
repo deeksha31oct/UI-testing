@@ -1,4 +1,5 @@
 package loyaltee.com;
+import Listners.ExtentTestNGListener;
 import org.openqa.selenium.io.FileHandler;
 import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.*;
@@ -6,8 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,9 +17,15 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.Duration;
 
-
+@Listeners(ExtentTestNGListener.class)
 public class Loyaltee_history {
-    ChromeDriver d;
+   WebDriver  d  ;
+    //ChromeDriver d;
+
+
+    public WebDriver getDriver() {
+        return d;
+    }
 
     @BeforeClass
     public void popup() {
@@ -27,6 +33,7 @@ public class Loyaltee_history {
         co.addArguments("disable_popup_block");
         co.addArguments("disable_notification");
         co.addArguments("remote_allow_origin=*");
+        co.addArguments("--window-size=1920,1080");
         d = new ChromeDriver(co);
     }
 
@@ -42,11 +49,11 @@ public class Loyaltee_history {
     @Test(dependsOnMethods = {"login"})
     public void history() {
         WebDriverWait wait = new WebDriverWait(d, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@aria-label='Settings']"))).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@aria-label='Settings[]']"))).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(),'View your stamp collection')]"))).click();
     }
 
-     @Test(dependsOnMethods = {"history"})
+   //  @Test(dependsOnMethods = {"history"})
         public void redeemed() throws IOException {
              WebDriverWait re = new WebDriverWait(d, Duration.ofSeconds(6));
              //JavascriptExecutor js = new JavascriptExecutor() ;
@@ -68,5 +75,10 @@ public class Loyaltee_history {
                  System.out.println("Redeemed click pass. Taking screenshot...");
             }
     }
+    //@AfterClass
+    public void tearDown() {
+        if (d != null) d.quit();
+    }
+
 }
 

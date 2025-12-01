@@ -26,8 +26,9 @@ public class second_largest_array
 
 
         System.out.println(Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst().get());
-
+        System.out.println(Arrays.stream(arr).boxed().sorted().skip(arr.length-4).findFirst().get());
         System.out.println(Arrays.stream(arr).boxed().sorted().skip(arr.length - 2).findFirst().get());
+
     }
 }
 

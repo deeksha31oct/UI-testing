@@ -6,17 +6,7 @@ import java.util.List;
 public class enen {
     public static void main (String[]args)
     {
-        int []a = {1,2,3,4,5,6,7,8,9};
-        int ee= 0,oo = 0;
-        for(int cc:a )
-        {
-            if(cc%2==0)
-            ee++;
-            else
-            oo++;
 
-        }
-        System.out.println("even "+ee+" odd "+oo);
 
         List <Integer>even = new ArrayList<>();
         List<Integer>odd = new ArrayList<>();

@@ -11,5 +11,6 @@ public class desending {
         System.out.println("orginal list :"+ Arrays.toString(a));
         Arrays.sort(a, Collections.reverseOrder());
         System.out.println("desending :"+ Arrays.toString(a));
+
     }
 }

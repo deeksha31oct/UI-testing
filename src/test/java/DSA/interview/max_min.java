@@ -1,5 +1,7 @@
 package DSA.interview;
 
+import java.util.Arrays;
+
 public class max_min {
     public static void main(String[]args)
     {
@@ -13,5 +15,6 @@ public class max_min {
         }
         System.out.println("maximum:"+ max);
         System.out.println("minimum : "+ min);
+        System.out.println(Arrays.stream(a).sorted().boxed().skip(a.length-1).findFirst().get());
     }
 }

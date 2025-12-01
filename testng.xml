@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MySuite">
+    <listeners>
+        <listener class-name="Listners.ExtentTestNGListener"/>
+    </listeners>
+    <test name="window_handle">
+        <classes>
+            <class name="Base_test.BaseClass"/>
+            <class name ="October.window_handle"/>
+
+
+        </classes>
+    </test>
+</suite>
+
+
+
