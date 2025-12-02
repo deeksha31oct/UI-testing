@@ -73,7 +73,7 @@ public class links extends BaseClass {
         }
     }
 
-    @Test
+    @Test(groups = "regression", priority = 6)
     public void switchtab() throws InterruptedException {
 
         WebElement tt = driver.findElement(By.id("opentab"));
@@ -96,7 +96,7 @@ public class links extends BaseClass {
         driver.quit();
     }
 
-    @Test
+    @Test(groups = "regression", priority = 5)
     public void switchtab2() throws InterruptedException {
         WebElement tt = driver.findElement(By.id("opentab"));
         tt.click();
@@ -109,7 +109,7 @@ public class links extends BaseClass {
         Thread.sleep(2000);
     }
 
-    @Test
+    @Test(groups = "regression", priority = 7)
     public void text() throws InterruptedException {
         driver.findElement(By.xpath("//legend[text()='Suggession Class Example']"));
         System.out.println(driver.getTitle());
@@ -147,7 +147,7 @@ public class links extends BaseClass {
         Thread.sleep(2000);
     }
 
-    @Test(groups = "regression", priority = 5)
+    @Test(groups = "regression", priority = 8)
     public void hoverover() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,800);");
@@ -159,7 +159,7 @@ public class links extends BaseClass {
 
     }
 
-    @Test
+    @Test(groups = "regression", priority = 9)
     public void broken() throws InterruptedException, IOException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,900);");
@@ -181,7 +181,7 @@ public class links extends BaseClass {
         }
     }
 
-    @Test
+    @Test(groups = "regression", priority = 10)
     public void right_table_text() {
      List< WebElement> we =   driver.findElements(By.xpath("//div[@class='right-align']//table[@id='product']//tbody/tr"));
       for(WebElement ri : we)
@@ -195,7 +195,7 @@ public class links extends BaseClass {
       }
 
     }
-    @Test
+    @Test(groups = "regression", priority = 11)
     public void texttable() {
         // Locate all rows inside the table body
         List<WebElement> rows = driver.findElements(By.xpath("//table[@id='product']//tbody/tr"));
