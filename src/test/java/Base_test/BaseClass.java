@@ -4,11 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 public class BaseClass extends report {
     public  WebDriver driver;
-@BeforeMethod
+@BeforeTest
     public void setupDriver() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized"); // Example option
@@ -17,7 +19,7 @@ public class BaseClass extends report {
 
         driver = new ChromeDriver(options); // <-- Attach options here
 }
-    @AfterMethod
+    @AfterTest
     public void tearDown() {
         if (driver != null) {
             driver.quit();

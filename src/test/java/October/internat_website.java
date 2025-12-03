@@ -164,7 +164,28 @@ public class internat_website  extends BaseClass {
         }
 
     }
+    @Test(groups = "internet link ell test", priority = 11)
 
+        public void dynamic_element_1() {
+        WebElement wet = driver.findElement(By.xpath("//div[@id='content']//li[12]/a"));
+        wet.click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='content']//div[@class='row']")));
+
+        for (int i = 1; i <= 3; i++) {
+            // Fetch each element fresh inside loop to avoid StaleElementReferenceException
+            WebElement block = driver.findElement(By.xpath("(//div[@id='content']//div[@class='row'])[" + i + "]"));
+            String text = block.getText().trim();
+            if (!text.isEmpty()) {
+                System.out.println("Block " + i + ": " + text);
+                System.out.println("--------------");
+            }
+        }
+    }
 
     }
+
+
+
 
