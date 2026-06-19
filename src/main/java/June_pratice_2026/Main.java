@@ -1,4 +1,4 @@
-package org.example;
+package June_pratice_2026;
 
 public class Main {
     public static void main(String[] args) {
