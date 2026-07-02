@@ -10,7 +10,8 @@ public class sort_special_char {
             char ch = a.charAt(i);
             if(!Character.isLetterOrDigit(ch))
             {
-                sp+= ch;
+               // sp+= ch;
+                sp= sp+ch ;
             }
         }
         System.out.println(sp);
