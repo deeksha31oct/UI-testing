@@ -17,3 +17,5 @@ public class sort_array {
         System.out.println(Collections.max(a));
     }
 }
+
+

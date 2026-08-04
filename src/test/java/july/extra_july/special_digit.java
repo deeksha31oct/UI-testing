@@ -10,7 +10,7 @@ public class special_digit {
             char ch = qw.charAt(i);
             if(Character.isLetter(ch))
             {
-                System.out.print(" "+ ch + " ");
+                System.out.print(""+ ch + "");
             }
 
         }
