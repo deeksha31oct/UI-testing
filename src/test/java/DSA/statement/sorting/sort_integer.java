@@ -7,9 +7,9 @@ public class sort_integer {
     for(int i =0;i<a.length();i++)
     {
         char c= a.charAt(i);
-        if(Character.isDigit(c))
+        if(Character.isLetterOrDigit(c))
         {
-            r +=c;
+            r += c;
         }
     }
         System.out.println(r);

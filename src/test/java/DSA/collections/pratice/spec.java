@@ -5,15 +5,12 @@ public class spec {
     {
         String s = "djuhfjuh#$%^238347#$%^&";
         String rs = "";
-        for(int i = 0;i<s.length();i++)
-        {
-            char c = s.charAt(i);
-            if(Character.isDigit(c))
-            {
-                rs+= c;
-            }
-
-        }
-        System.out.println("special char :  "+ rs);
+       for(char r : s.toCharArray())
+       {
+           if(Character.isLetterOrDigit(r))
+           {
+               System.out.print(r);
+           }
+       }
     }
 }

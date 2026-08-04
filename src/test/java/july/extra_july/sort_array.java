@@ -1,6 +1,5 @@
-package july;
+package july.extra_july;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

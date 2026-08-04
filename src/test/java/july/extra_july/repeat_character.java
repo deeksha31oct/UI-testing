@@ -1,4 +1,4 @@
-package july;
+package july.extra_july;
 
 public class repeat_character {
     public static void main(String[] args) {

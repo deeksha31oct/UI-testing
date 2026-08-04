@@ -1,4 +1,4 @@
-package july;
+package july.extra_july;
 
 public class special_digit {
     public static void main (String[]args)

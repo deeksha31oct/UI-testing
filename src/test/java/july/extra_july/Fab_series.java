@@ -1,4 +1,4 @@
-package july;
+package july.extra_july;
 
 public class Fab_series {
     public static void fabi (int n ) {

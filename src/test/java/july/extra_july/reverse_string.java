@@ -1,4 +1,4 @@
-package july;
+package july.extra_july;
 
 public class reverse_string {
     public static void main(String[]args)

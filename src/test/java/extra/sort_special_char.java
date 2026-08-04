@@ -11,9 +11,10 @@ public class sort_special_char {
             if(!Character.isLetterOrDigit(ch))
             {
                // sp+= ch;
-                sp= sp+ch ;
+                //sp= sp+ch ;
+                System.out.print(ch);
             }
         }
-        System.out.println(sp);
+
     }
 }
